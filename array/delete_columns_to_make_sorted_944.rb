@@ -42,6 +42,8 @@ end
 def faster
   a.map!(&:chars).transpose.count { |row| row.sort != row }
 end
+# &Symbol#to_proc returns a proc that responds to the symbol’s method.
+
 # p  a = ["rrjk", "furt", "guzm"]
 # p a.map!(&:length)  =>
 # [4, 4, 4]
