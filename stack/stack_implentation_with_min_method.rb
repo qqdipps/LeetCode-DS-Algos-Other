@@ -1,3 +1,5 @@
+#### broken. what happens if min is popped what is next min?
+
 module LinkedList
 
   class Node
