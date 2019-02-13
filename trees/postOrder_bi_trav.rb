@@ -7,7 +7,7 @@ class Node
     end
 end
 # Depth first traversal
-# postorder -> (left, right, root) 
+# postorder -> (left, right, root)
 
 
 
@@ -19,3 +19,12 @@ root.left.left = Node.new(4)
 root.left.right = Node.new(5)
 root.right.left = Node.new(6)
 root.right.right = Node.new(7)
+
+
+def print_post_order_trav_rec(root)
+  print_post_order_trav_rec(root.left)
+  print_post_order_trav_rec(root.right)
+  puts root
+end
+
+p print_post_order_trav_rec(root)

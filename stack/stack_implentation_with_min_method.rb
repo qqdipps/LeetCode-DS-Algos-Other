@@ -21,7 +21,7 @@ module LinkedList
 
     def pop
       val = @first
-      @first = @first.next
+      @first = @first.next  #issue if @min is popped what is prev min??
       return val
     end
 

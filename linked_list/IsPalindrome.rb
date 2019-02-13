@@ -13,6 +13,7 @@
 # Output: true
 # Follow up:
 # Could you do it in O(n) time and O(1) space?
+require "awesome_print"
 
 # Definition for singly-linked list.
 class ListNode
@@ -86,9 +87,9 @@ def reverse(head)
 end
 # p is_palindrome(phead)
 # p reverse(chead)
-p is_palindrome(chead)
+ap is_palindrome(chead)
 # p reverse(chead)
-
+ap chead
 
 def test(head)
 end
