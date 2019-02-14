@@ -1,3 +1,41 @@
+# Method converts a string of binary to base 10 decimal integer.
+#   -> Performs operations at end of string.
+#   -> Uses prinicple of 2 ** exp to tally den
+#          -> (where exp equals number of indexes from most right that is end of string.) 
+# @param string -> bi
+# @return integer
+def bi_to_den(bi)
+  exp = 0
+  den = 0
+  while bi.length > 0
+    den += (bi[-1] == "1" ? 2 ** exp : 0)
+    exp += 1
+    bi = bi[0...-1]
+  end
+  return den
+end
+
+# Method converts a base 10 integer to binary string repesentation. 
+#   -> Finds largest possible power of two from den using log base 2. 
+#   -> Length of binary string repesentation equals largest possible power of two plus one.
+#   -> Fill in rest of string using logic to check if "1" or "0"
+# @param integer -> den
+# @return string
+def den_to_bi(den)
+  exp = Math.log2(den).floor
+  bi = ""
+  (exp + 1).times do |i|
+    if 2 ** (exp - i) <= den
+      bi += "1"
+      den -= (2 ** (exp - i))
+    else
+      bi += "0"
+    end
+  end
+  return bi
+end
+
+#--------------------------------------------
 def num_to_bit(num)
 	num.to_s(2)
 end
