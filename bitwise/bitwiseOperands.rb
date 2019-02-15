@@ -23,8 +23,8 @@ end
 def den_to_bi(den)
   exp = Math.log2(den).floor
   bi = ""
-  base = 2 ** (exp - i)
   (exp + 1).times do |i|
+    base = 2 ** (exp - i)
     if base <= den
       bi += "1"
       den -= base
